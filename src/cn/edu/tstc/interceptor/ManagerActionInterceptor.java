@@ -19,14 +19,6 @@ import cn.edu.tstc.util.ToolUtil;
 
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
-
-/**
- * 项目名称：Qunar 类名称：ManagerActionInterceptor 类描述: 创建人：姚洪肖 创建时间：2014-4-16
- * 下午10:19:28 修改人：姚洪肖 修改时间：2014-4-16 下午10:19:28 修改备注：
- * 
- * @version
- */
-
 public class ManagerActionInterceptor implements Interceptor {
 	private static final long serialVersionUID = 1L;
 	protected Logger actionLogger = LogManager.getLogger("ACTION");

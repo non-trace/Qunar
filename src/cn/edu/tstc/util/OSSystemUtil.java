@@ -1,12 +1,6 @@
 package cn.edu.tstc.util;
 
 import java.io.UnsupportedEncodingException;
-
-/**
- * 系统操作组件
- * @author Administrator
- *
- */
 public class OSSystemUtil {
 	/**
 	 * 判定当前系统使用的平台是否是Windows操作系统
