@@ -39,20 +39,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </header>
 
 	<!--==============================content================================-->
-    <section id="content"><div class="ic">More Website Templates @ <a href="http://www.mycodes.net/" >网页模板</a> - February 06, 2012!</div>
-        <div class="main">
-            <div class="container_12">
-            	  <div class="indent-right">
-                            <h2>Advancement</h2>
-                            <p class="p2"><span class="color-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</span>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                            <div class="wrapper prev-indent-bot2">
-                                <figure class="img-indent"><img src="images/page3-img1.png" alt=""></figure>
-                                <div class="extra-wrap">                      	
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-                                </div>
-                            </div>
-                            Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
+	<section id="content">
+		<div class="main">
+			<div class="container_12">
+				<div class="indent-right">
+					<h2>Advancement</h2>
+					<p class="p2">
+						<span class="color-1">${attraction.attractions_name}</span><br/>
+						${attraction.attractions_describe}
+					</p>
+					<div class="wrapper prev-indent-bot2">
+						<figure class="img-indent">
+							<img src="${attraction.image_url}" alt="">
+						</figure>
+						<div class="extra-wrap">                      	
+    						开放时间:${attraction.attractions_time}<br/>
+    						电&nbsp;&nbsp;话:${attraction.attractions_phone}<br/>
+    						景点地址：${attraction.attractions_address}<br/>
+    						门票信息：${attraction.attractions_ticket_info}
+    					</div>
+					</div>
+					${attraction.attractions_detailed_information}
+				</div>
             </div>
         </div>
     </section>

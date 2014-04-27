@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
@@ -15,6 +17,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BaseAction extends ActionSupport implements ServletRequestAware,
 		ServletResponseAware {
+	protected Logger aLogger  = LogManager.getLogger("ACTION");
+	protected Logger exceptionLogger  = LogManager.getLogger("EXCEPTION");
 	private static final long serialVersionUID = 1L;
 	protected HttpServletRequest _request;
 	protected HttpServletResponse _response;

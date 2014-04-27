@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,14 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/cufon-replace.js" type="text/javascript"></script>
     <script src="js/Glegoo_400.font.js" type="text/javascript"></script> 
     <script src="js/FF-cash.js" type="text/javascript"></script>
-    <script src="js/script.js" type="text/javascript"></script>      
-	<!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-        	<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-    </div>
-	<![endif]-->
+    <script src="js/script.js" type="text/javascript"></script>
     <!--[if lt IE 9]>
    		<script type="text/javascript" src="js/html5.js"></script>
         <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
@@ -53,30 +47,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="main">
             <div class="container_12">
                 <div class="wrapper p3">
-                <%for(int i=0;i<3;i++){ %>
-                	<article class="grid_4">
-                    	<div class="banner">
-                        	<figure><img src="images/banner-1.jpg" alt="" /></figure>
-                            <a class="button" href="#">more</a>
-                        </div>
-                    </article>
-                <%} %>
+	                <s:iterator value="#request.hot" var="hot">
+	                	<article class="grid_4">
+	                    	<div class="banner">
+	                        	<figure>
+	                        		${attractions_name}
+	                        		<img src="${image_url}" alt="" />
+	                        	</figure>
+	                            <a class="button" href="attraction.action?attraction_id=${attractions_id}">more</a>
+	                        </div>
+	                    </article>
+	                </s:iterator>
                 </div>
                 <div class="wrapper p3">
                 	<article class="grid_8">
-                    	<h2>Next Event完全</h2>
-                        <%for(int i=0;i<4;i++){ %>
+                    	<h2>Hot Attraction</h2>
+                       <s:iterator value="#request.attractions" var="attractions">
                           <div class="wrapper border-bot p3">
                             <div class="img-indent">
-                            	<p class="p3"><img src="images/page1-img2.png" alt=""></p>
-                                <a class="button2" href="#">more</a>
+                            	<p class="p3"><img src="${page1_image_url}" alt=""></p>
+                                <a class="button2" href="attraction.action?attraction_id=${attractions_id}">more</a>
                             </div>
                             <div class="extra-wrap">
-                            	<span class="color-1">旅游景点 <%=i+1 %></span>
-                            	旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点      旅游景点
+                            	<span class="color-1">${attractions_name}</span><br/>
+                            	${attractions_describe}
                             </div>
                         </div>
-                        <%} %>
+                       </s:iterator>
                     </article>
                 </div>
             </div>

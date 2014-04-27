@@ -18,6 +18,5 @@ import cn.edu.tstc.common.dao.BaseDao;
  */
 
 public interface IBaseService {
-	public BaseDao getBaseDao();
-	public void setBaseDao(BaseDao baseDao);
+	
 }

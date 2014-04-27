@@ -132,13 +132,11 @@
 	<logger name="ACTION" additivity="false">
 		<level value="debug" />
 		<appender-ref ref="ASYNC_ACT_FILE" />
-		<appender-ref ref="myConsole" />
 	</logger>
 
 	<logger name="SERVICE" additivity="false">
 		<level value="debug" />
 		<appender-ref ref="ASYNC_SERVICE_FILE" />
-		<appender-ref ref="myConsole" />
 	</logger>
 
 	<logger name="EXCEPTION" additivity="false">
@@ -150,25 +148,17 @@
 
 
 	<!-- 数据库输出日志 STA -->
-	<logger name="java.sql.Connection" additivity="false">
-		<level value="debug" />
-		<appender-ref ref="ASYNC_DB_FILE" />
-	</logger>
-	<logger name="java.sql.Statement" additivity="false">
-		<level value="debug" />
-		<appender-ref ref="ASYNC_DB_FILE" />
-	</logger>
-	<logger name="java.sql.PreparedStatement" additivity="false">
-		<level value="debug" />
-		<appender-ref ref="ASYNC_DB_FILE" />
-	</logger>
-	<logger name="java.sql.ResultSet" additivity="false">
-		<level value="debug" />
-		<appender-ref ref="ASYNC_DB_FILE" />
-	</logger>
+	
+	<logger name="org.springframework.jdbc.core" additivity="true">  
+        <level value="DEBUG" />  
+        <!-- 日志输出地 -->  
+        <appender-ref ref="ASYNC_DB_FILE" />
+        <appender-ref ref="myConsole" />
+    </logger>
+    
 	<!-- 数据库输出日志 END -->
 
-	<logger name="cn.edu.tstc" additivity="false">
+	<logger name="cn.edu.tstc" additivity="true">
 		<level value="debug" />
 		<appender-ref ref="ASYNC_CLASS_FILE" />
 	</logger>  
